@@ -49,11 +49,83 @@ main {
 .regiao__kanto-container {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 1rem;
+  gap: 2rem;
+
+  justify-items: center;
+  border: 5px solid black;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-image: linear-gradient(#d8c230, #ffffff);
+}
+
+.regiao__kanto-container-personagem {
+  align-content: center;
+}
+
+.regiao__kanto-container-personagem img {
+  height: 150px;
+  width: 120px;
+}
+
+.regiao__kanto-container-personagem p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 .regiao__kanto-container-pokemons {
   display: grid;
+
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 2fr 2fr;
+
+  gap: 1rem;
+}
+
+.regiao__unova-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+
+  justify-items: center;
+  border: 5px solid black;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-image: linear-gradient(#7d37ec, #ffffff);
+}
+
+.regiao__hoenn-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+
+  justify-items: center;
+  border: 5px solid black;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-image: linear-gradient(#88216b, #ffffff);
+}
+
+.regiao__johto-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+
+  justify-items: center;
+  border: 5px solid black;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-image: linear-gradient(#3dd46f, #ffffff);
+}
+
+.regiao__sinnoh-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+
+  justify-items: center;
+  border: 5px solid black;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-image: linear-gradient(#ec3737, #ffffff);
 }
