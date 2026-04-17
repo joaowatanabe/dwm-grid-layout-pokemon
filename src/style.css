@@ -129,3 +129,15 @@ main {
   border-radius: 1rem;
   background-image: linear-gradient(#ec3737, #ffffff);
 }
+
+.regiao__kanto-container-pokemons div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.regiao__kanto-container-pokemons p {
+  font-weight: lighter;
+  text-align: center;
+}
