@@ -9,6 +9,44 @@ body {
   background-color: #f0f0f0;
 }
 
+.menu__mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .menu__mobile {
+    display: block;
+    background-color: #ff7e5f;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .menu__mobile-regiao {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem;
+    gap: 1rem;
+  }
+
+  .menu__mobile-regiao li a {
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px dimgrey;
+  }
+
+  .menu {
+    display: none;
+  }
+}
+
 .header {
   background-image: linear-gradient(to right, #feb47b, #ff7e5f);
 }
