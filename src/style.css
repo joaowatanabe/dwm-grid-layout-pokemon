@@ -11,6 +11,7 @@ body {
 
 .header {
   background-image: linear-gradient(to right, #feb47b, #ff7e5f);
+  position: relative;
 }
 
 .menu__regiao {
@@ -50,16 +51,35 @@ main {
   align-items: center;
 }
 
-.regiao__kanto-container {
+.regiao__kanto-container,
+.regiao__unova-container,
+.regiao__hoenn-container,
+.regiao__johto-container,
+.regiao__sinnoh-container {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 2rem;
-
   justify-items: center;
   border: 5px solid black;
   padding: 2rem;
   border-radius: 1rem;
+  width: 100%;
+}
+
+.regiao__kanto-container {
   background-image: linear-gradient(#d8c230, #ffffff);
+}
+.regiao__unova-container {
+  background-image: linear-gradient(#7d37ec, #ffffff);
+}
+.regiao__hoenn-container {
+  background-image: linear-gradient(#88216b, #ffffff);
+}
+.regiao__johto-container {
+  background-image: linear-gradient(#3dd46f, #ffffff);
+}
+.regiao__sinnoh-container {
+  background-image: linear-gradient(#ec3737, #ffffff);
 }
 
 .regiao__kanto-container-personagem {
@@ -79,59 +99,9 @@ main {
 
 .regiao__kanto-container-pokemons {
   display: grid;
-
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 2fr 2fr;
-
   gap: 1rem;
-}
-
-.regiao__unova-container {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 2rem;
-
-  justify-items: center;
-  border: 5px solid black;
-  padding: 2rem;
-  border-radius: 1rem;
-  background-image: linear-gradient(#7d37ec, #ffffff);
-}
-
-.regiao__hoenn-container {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 2rem;
-
-  justify-items: center;
-  border: 5px solid black;
-  padding: 2rem;
-  border-radius: 1rem;
-  background-image: linear-gradient(#88216b, #ffffff);
-}
-
-.regiao__johto-container {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 2rem;
-
-  justify-items: center;
-  border: 5px solid black;
-  padding: 2rem;
-  border-radius: 1rem;
-  background-image: linear-gradient(#3dd46f, #ffffff);
-}
-
-.regiao__sinnoh-container {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 2rem;
-
-  justify-items: center;
-  border: 5px solid black;
-  padding: 2rem;
-  border-radius: 1rem;
-  background-image: linear-gradient(#ec3737, #ffffff);
 }
 
 .regiao__kanto-container-pokemons div {
@@ -147,51 +117,96 @@ main {
 }
 
 .regioes__botao {
-  color: blue;
-  padding: 0.5rem 1rem;
+  display: block;
+  margin: 0 auto;
+  background: none;
   border: none;
-  border-radius: 0.5rem;
-  font-size: 1.2rem;
+  color: blue;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
   cursor: pointer;
-  width: 100%;
+  padding: 0.75rem 1.5rem;
+  text-shadow: 1px 1px 3px dimgrey;
+  transition: text-shadow 0.2s ease;
+}
+
+.regioes__botao:hover {
+  text-shadow: 1px 1px 3px rgb(194, 194, 194);
 }
 
 .menu__mobile {
   display: none;
-  height: 5rem;
+  position: relative;
+  padding: 0.5rem 1rem;
   text-align: center;
 }
 
 .menu__suspenso {
   display: none;
-  padding: 1rem;
-  background-color: white;
-  border-radius: 0.5rem;
-  margin-top: 0.5rem;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 0.75rem 0;
+  list-style: none;
+  z-index: 100;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-8px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  pointer-events: none;
+}
+
+.menu__mobile:hover .menu__suspenso,
+.menu__mobile:focus-within .menu__suspenso {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+.menu__suspenso li {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.menu__suspenso li:last-child {
+  border-bottom: none;
 }
 
 .menu__suspenso li a {
+  display: block;
   text-decoration: none;
   color: blue;
   font-weight: bold;
-  font-size: 1.5rem;
-  text-shadow: 2px 2px 4px dimgrey;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 3px dimgrey;
+  padding: 0.75rem 1.5rem;
+  text-align: center;
+  transition: background 0.15s ease;
 }
 
-.menu__suspenso a:hover {
-  text-shadow: 2px 2px 4px rgb(194, 194, 194);
-}
-.menu__mobile:hover .menu__suspenso {
-  display: block;
+.menu__suspenso li a:hover {
+  background-color: #f8f4ff;
+  text-shadow: 1px 1px 3px rgb(194, 194, 194);
 }
 
 @media (max-width: 768px) {
-  .menu {
+  .menu__regiao {
     display: none;
   }
 
   .menu__mobile {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 5rem;
   }
 
   .header {
@@ -201,11 +216,14 @@ main {
     justify-content: center;
   }
 
-  .menu__mobile .regiao__botao {
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.5rem;
-    text-shadow: 2px 2px 4px dimgrey;
+  .regiao__kanto-container,
+  .regiao__unova-container,
+  .regiao__hoenn-container,
+  .regiao__johto-container,
+  .regiao__sinnoh-container {
+    grid-template-columns: 1fr;
+  }
+  .regiao__kanto-container-pokemons {
+    grid-template-columns: 1fr 1fr;
   }
 }
