@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.header {
+  background-image: linear-gradient(to right, #feb47b, #ff7e5f);
+}
+
+.menu__regiao {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem;
+  gap: 1rem;
+}
+
+.menu__regiao li a {
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px dimgrey;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+.regiao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.regiao__kanto-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+
+.regiao__kanto-container-pokemons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
