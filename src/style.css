@@ -9,44 +9,6 @@ body {
   background-color: #f0f0f0;
 }
 
-.menu__mobile {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .menu {
-    display: none;
-  }
-
-  .menu__mobile {
-    display: block;
-    background-color: #ff7e5f;
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .menu__mobile-regiao {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    align-items: center;
-    padding: 2.5rem;
-    gap: 1rem;
-  }
-
-  .menu__mobile-regiao li a {
-    text-decoration: none;
-    color: blue;
-    font-weight: bold;
-    font-size: 1.5rem;
-    text-shadow: 2px 2px 4px dimgrey;
-  }
-
-  .menu {
-    display: none;
-  }
-}
-
 .header {
   background-image: linear-gradient(to right, #feb47b, #ff7e5f);
 }
@@ -66,6 +28,10 @@ body {
   font-weight: bold;
   font-size: 2rem;
   text-shadow: 2px 2px 4px dimgrey;
+}
+
+.menu__regiao li a:hover {
+  text-shadow: 2px 2px 4px rgb(194, 194, 194);
 }
 
 main {
@@ -178,4 +144,68 @@ main {
 .regiao__kanto-container-pokemons p {
   font-weight: lighter;
   text-align: center;
+}
+
+.regioes__botao {
+  color: blue;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.menu__mobile {
+  display: none;
+  height: 5rem;
+  text-align: center;
+}
+
+.menu__suspenso {
+  display: none;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.menu__suspenso li a {
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 4px dimgrey;
+}
+
+.menu__suspenso a:hover {
+  text-shadow: 2px 2px 4px rgb(194, 194, 194);
+}
+.menu__mobile:hover .menu__suspenso {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .menu__mobile {
+    display: block;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu__mobile .regiao__botao {
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px dimgrey;
+  }
 }
